@@ -4,7 +4,7 @@ const caminho = __dirname + '/dados.txt';
 
 function lerArquivo (caminho) {
     return new Promise(resolve => {
-        fs.readFile(caminho, 'utf-8', (err, conteudo) => {
+        fs.readFile(caminho, 'utf-8', (_, conteudo) => {
             resolve(conteudo.toString());
         });
     });
