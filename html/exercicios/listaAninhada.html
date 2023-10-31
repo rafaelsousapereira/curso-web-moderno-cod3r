@@ -1,0 +1,111 @@
+<h1>Projeto</h1>
+<ul class="tree">
+    <li>
+        <a href wm-backend>backend</a>
+        <ul class="backend">
+            <li>
+                <a href wm-app>app</a>
+                <ul>
+                    <li class="app">produto.js</li>
+                    <li class="app">usuario.js</li>
+                    <li class="app">venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <a href wm-config>config</a>
+                <ul>
+                    <li class="config">banco.js</li>
+                    <li class="config">rotas.js</li>
+                    <li class="config">servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href wm-frontend>frontend</a>
+        <ul class="frontend">
+            <li>
+                <a href wm-public>public</a>
+                <ul>
+                    <li class="public">app.css</li>
+                    <li class="public">app.js</li>
+                    <li class="public">index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<script>
+    document.querySelectorAll('[wm-backend]').forEach(link => {
+        const backend = document.querySelectorAll('.backend');
+
+        link.onclick = function (e) {
+            e.preventDefault();
+
+            escondeMostraPasta(backend);
+
+            console.log('acao => backend!');
+        }
+    });
+
+    document.querySelectorAll('[wm-app]').forEach(link => {
+        const app = document.querySelectorAll('.app');
+
+        link.onclick = function(e) {
+            e.preventDefault();
+
+            escondeMostraPasta(app);
+
+            console.log('acao => app!');
+        }
+    });
+
+    document.querySelectorAll('[wm-config]').forEach(link => {
+        const config = document.querySelectorAll('.config');
+
+        link.onclick = function(e) {
+            e.preventDefault();
+
+            escondeMostraPasta(config);
+
+            console.log('acao => config!');
+        }
+    });
+
+    document.querySelectorAll('[wm-frontend]').forEach(link => {
+        const frontend = document.querySelectorAll('.frontend');
+
+        link.onclick = function(e) {
+            e.preventDefault();
+
+            escondeMostraPasta(frontend);
+
+            console.log('acao => frontend!');
+        }
+    });
+
+    document.querySelectorAll('[wm-public]').forEach(link => {
+        const public = document.querySelectorAll('.public');
+
+        link.onclick = function(e) {
+            e.preventDefault();
+
+            escondeMostraPasta(public);
+
+            console.log('acao => public!');
+        }
+    });
+
+
+    function escondeMostraPasta(conteudo) {
+            conteudo.forEach(el => {
+                if (el.style.display !== 'none') {
+                    el.style.display = 'none';
+                } else {
+                    el.style.display = 'block';
+                }
+            });
+        }
+</script>
