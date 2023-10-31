@@ -1,35 +1,35 @@
 <h1>Projeto</h1>
 <ul class="tree">
     <li>
-        <a href wm-backend>backend</a>
-        <ul class="backend">
+        <span wm-folder>backend</span>
+        <ul>
             <li>
-                <a href wm-app>app</a>
+                <span wm-folder>app</span>
                 <ul>
-                    <li class="app">produto.js</li>
-                    <li class="app">usuario.js</li>
-                    <li class="app">venda.js</li>
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
                 </ul>
             </li>
             <li>
-                <a href wm-config>config</a>
+                <span wm-folder>config</span>
                 <ul>
-                    <li class="config">banco.js</li>
-                    <li class="config">rotas.js</li>
-                    <li class="config">servidor.js</li>
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
                 </ul>
             </li>
         </ul>
     </li>
     <li>
-        <a href wm-frontend>frontend</a>
-        <ul class="frontend">
+        <span wm-folder>frontend</span>
+        <ul>
             <li>
-                <a href wm-public>public</a>
+                <span wm-folder>public</span>
                 <ul>
-                    <li class="public">app.css</li>
-                    <li class="public">app.js</li>
-                    <li class="public">index.html</li>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
                 </ul>
             </li>
         </ul>
@@ -38,74 +38,13 @@
 
 <link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
 <script>
-    document.querySelectorAll('[wm-backend]').forEach(link => {
-        const backend = document.querySelectorAll('.backend');
+    document.querySelectorAll('[wm-folder]').forEach(folder => {
 
-        link.onclick = function (e) {
-            e.preventDefault();
+        folder.onclick = function (e) {
 
-            escondeMostraPasta(backend);
-
-            console.log('acao => backend!');
+            const ul = folder.nextElementSibling;
+            const display = ul.style.display;
+            ul.style.display = display === 'none' ? 'block' : 'none';
         }
     });
-
-    document.querySelectorAll('[wm-app]').forEach(link => {
-        const app = document.querySelectorAll('.app');
-
-        link.onclick = function(e) {
-            e.preventDefault();
-
-            escondeMostraPasta(app);
-
-            console.log('acao => app!');
-        }
-    });
-
-    document.querySelectorAll('[wm-config]').forEach(link => {
-        const config = document.querySelectorAll('.config');
-
-        link.onclick = function(e) {
-            e.preventDefault();
-
-            escondeMostraPasta(config);
-
-            console.log('acao => config!');
-        }
-    });
-
-    document.querySelectorAll('[wm-frontend]').forEach(link => {
-        const frontend = document.querySelectorAll('.frontend');
-
-        link.onclick = function(e) {
-            e.preventDefault();
-
-            escondeMostraPasta(frontend);
-
-            console.log('acao => frontend!');
-        }
-    });
-
-    document.querySelectorAll('[wm-public]').forEach(link => {
-        const public = document.querySelectorAll('.public');
-
-        link.onclick = function(e) {
-            e.preventDefault();
-
-            escondeMostraPasta(public);
-
-            console.log('acao => public!');
-        }
-    });
-
-
-    function escondeMostraPasta(conteudo) {
-            conteudo.forEach(el => {
-                if (el.style.display !== 'none') {
-                    el.style.display = 'none';
-                } else {
-                    el.style.display = 'block';
-                }
-            });
-        }
 </script>
