@@ -6,7 +6,30 @@
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        /* 
+            Troque os seletores por qualquer um desses, conforme seu proposito: 
+            * => todos os elelmentos no documento
+            .tag => seletor tipo classe
+            #aprovados => seletor tipo id
+            #aninhado > div => seleciona decendente direto
+            #aninhado section => seleciona qualquer descendente
+            p + ul => seletor simbling
+            p ~ ol => seletor general simbling
+            [feira] => seletor de atributo
+            [feira=casa] => seletor de atributo com seu valor
+            [feira~=empresa] => seleciona possiveis elementos dentro de uma propriedade
+            [feira*=sa] => seleciona que esta associado com o parametro
+            span:nth-child(1) => seleciona filho na primeira possicao
+            section > :nth-child(odd) => seleciona filhos impares
+            section > :nth-child(even) => seleciona filhos pares
+            section > :nth-child(1)  => seleciona o primeiro filho
+            section > :nth-child(odd), ul, p  => seleciona filhos, ul e impares/pares 
+            section > span:nth-of-type(2) => seleciona o elemento do tipo span ou outros
+            */
+        section > span:nth-of-type(2) {
+            color: #ff0;
+            background-color: #f77;
+        }
     </style>
 </head>
 
@@ -29,7 +52,7 @@
             </ol>
             <div id='aninhado' class='tag'>
                 <div class="tag">
-                    <section class='tag'>
+                    <section class='tag nolabel'>
                         <span class='tag'>1</span>
                         <p class='tag'>2</p>
                         <span class='tag'>3</span>
